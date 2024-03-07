@@ -21,14 +21,8 @@
     {
       "id": "4",
       "title": "My Fourth Post",
-      "datetime": "July 01, 2021 11:17:36 AM",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
-    },
-    {
-      "id": "41",
-      "title": "Test Post for Tut axios",
-      "datetime": "March 07, 2024 5:20:36 PM",
-      "body": "Test post"
+      "datetime": "March 07, 2024 6:37:39 PM",
+      "body": "Its a fourth post edit this looks good"
     }
   ]
 }

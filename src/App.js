@@ -21,16 +21,41 @@ function App() {
   const [postBody, setPostBody] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const fetchPosts = async (e) => {
+      try {
+        const response = await api.get('/posts');
+        setPosts(response.data);
+      } catch (error) {
+
+        if (error.response) {
+          // Not in range of 200 status code
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else {
+          console.log(`Error: ${error.message}`);
+        }
+      }
+    }
+    fetchPosts();
+  }, [])
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
     const newPost = { id, title: postTitle, datetime, body: postBody };
-    const allPosts = [ ...posts, newPost];
-    setPosts(allPosts);
-    setPostTitle('');
-    setPostBody('');
-    navigate('/');
+    try {
+      const response = await api.post('/posts', newPost);
+      const allPosts = [ ...posts, response.data];
+      setPosts(allPosts);
+      setPostTitle('');
+      setPostBody('');
+      navigate('/');
+    } catch (error) {
+      console.log(`Error: ${error.message}`);
+    }
   };
 
   const handleDelete = (id) => {

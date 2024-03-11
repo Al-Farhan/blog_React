@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router-dom';
-import DataContext from "./context/DataContext";
+// import DataContext from "./context/DataContext";
+import { useStoreState, useStoreActions } from 'easy-peasy';
 
 const PostPage = () => {
 

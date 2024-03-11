@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-run json-server using this command: npx json-server --watch data/db.json --port 3500
+run json-server using this command: npx json-server -p 3500 -w data/db.json
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

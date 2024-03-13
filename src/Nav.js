@@ -8,8 +8,8 @@ const Nav = () => {
   // const { search, setSearch } = useContext(DataContext);
   const posts = useStoreState((state) => state.posts);
   const search = useStoreState((state) => state.search);
-  const setSearch = useStoreState((state) => state.setSearch);
-  const setSearchResults = useStoreState((state) => state.setSearchResults);
+  const setSearch = useStoreActions((actions) => actions.setSearch);
+  const setSearchResults = useStoreActions((actions) => actions.setSearchResults);
 
   useEffect(() => {
     const filteredResults = posts.filter(

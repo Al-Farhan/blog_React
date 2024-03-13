@@ -6,7 +6,7 @@ import { useStoreState } from 'easy-peasy';
 
 const Home = ({ isLoading, fetchError }) => {
   // const { searchResults, fetchError, isLoading } = useContext(DataContext);
-  const { searchResults } = useStoreState((state) => state.searchResults);
+  const searchResults = useStoreState((state) => state.searchResults);
   return (
     <main className='Home'>
       {isLoading && <p className='statusMsg'>Loading posts...</p>}

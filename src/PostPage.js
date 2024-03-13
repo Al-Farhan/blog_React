@@ -9,12 +9,12 @@ const PostPage = () => {
   const { id } = useParams();
 
   // const { posts, handleDelete } = useContext(DataContext);
-  const {deletePost} = useStoreActions((actions) => actions.deletePost);
-  const {getPostById} = useStoreState((state) => state.getPostById);
+  const deletePost = useStoreActions((actions) => actions.deletePost);
+  const getPostById = useStoreState((state) => state.getPostById);
 
   const post = getPostById(id);
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     deletePost(id);
     navigate('/');
   };
